@@ -62,7 +62,7 @@
                     <div class="login100-pic js-tilt" data-tilt="">
                     <img src="images\banner.png" alt="IMG" style="margin-top:15px; margin-left:10px;">
                 </div>
-                    <div style="margin-top:10px; margin-left:75px;">
+                    <div style="margin-top:10px; margin-left:25%;">
                         <a class="txt2" href="register.php">
                             Create your Account
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true" ></i>

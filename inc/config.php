@@ -3,7 +3,7 @@
 define('DBServer','localhost');
 define('DBUsername','root');
 define('DBPassword','12345678');
-define('Database','cce');
+define('Database','social');
 
 $link = mysqli_connect(DBServer, DBUsername, DBPassword, Database);
  

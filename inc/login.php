@@ -2,8 +2,7 @@
 session_start();
 include_once('config.php');
 
-if(isset($_SESSION['user']))
-{
+if (isset($_SESSION['user'])) {
     header('location: home.php');
     return;
 }
@@ -12,25 +11,23 @@ if (empty($_POST['email'])) {
     echo 'Enter your email.';
     return;
 }
-if (empty($_POST['password'])) {
+if (empty($_POST['pass'])) {
     echo 'Enter your password.';
     return;
 }
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
+$email = mysqli_real_escape_string($link, $_POST['email']);
+$password = mysqli_real_escape_string($link, $_POST['pass']);
 
 if ($stmt = $link->prepare('SELECT * FROM users WHERE Email = ?')) {
     $stmt->bind_param('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
-        $password_hash = $row['password'];
-        
+        $password_hash = $row['Password'];
         if (password_verify($password, $password_hash)) {
-            echo 'Login success';
-            //$_SESSION["user"] = $username;
-            
-            
+            echo 'Success';
+            $_SESSION['User'] = $row['UserId'];
+            $_SESSION['Name'] = $row['FirstName'] . ' ' . $row['LastName'];
         } else {
             echo 'Invalid Pass';
         }
@@ -38,3 +35,4 @@ if ($stmt = $link->prepare('SELECT * FROM users WHERE Email = ?')) {
         echo $stmt->error;
     }
 }
+?>

@@ -25,7 +25,7 @@
                     <img src="images\img-01.png" alt="IMG">
                 </div>
 
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" id="login">
                     <span class="login100-form-title">
                         Member Login
                     </span>
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="text-center p-t-136">
-                        <a class="txt2" href="Signup.html">
+                        <a class="txt2" href="register.php">
                             Create your Account
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>

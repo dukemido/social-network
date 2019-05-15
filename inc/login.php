@@ -25,9 +25,11 @@ if ($stmt = $link->prepare('SELECT * FROM users WHERE Email = ?')) {
     if ($row = $result->fetch_assoc()) {
         $password_hash = $row['Password'];
         if (password_verify($password, $password_hash)) {
-            echo 'Success';
             $_SESSION['User'] = $row['UserId'];
             $_SESSION['Name'] = $row['FirstName'] . ' ' . $row['LastName'];
+            $_SESSION['Pic'] = $row['HasPic'];
+            $_SESSION['Gender'] = $row['Gender'];
+            echo 'success';
         } else {
             echo 'Invalid Pass';
         }

@@ -85,7 +85,7 @@
                     data: dataf,
                     success: function(data) {
                         if (data == 'success')
-                            window.location.replace("home.php");
+                            window.location.replace("index.php");
                         else swal("You have a few errors!", data, "error");
                         //alert(data);
 

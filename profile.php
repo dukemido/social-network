@@ -93,10 +93,9 @@ if (!$myprofile) {
     $content = $content . '<form id="request"> 
         <input type="hidden" name="requester" value="' . $_SESSION['User'] . '">
         <input type="hidden" name="requestee" value="' . $id . '">
-        <input type="submit" value="Add Friend">
+        <li><a href="#" title="" class="hre"><input type="submit" value="Add Friend" style=" border:none; background:none; color:#ffffff;"></a></li>
         </form>';
 }
-// <li><a href="#" title="" class="hre">Add Friend</a></li>
 
 $content = $content . '</ul>
                                 <ul class="flw-status">
@@ -108,14 +107,9 @@ $content = $content . '</ul>
                                 </ul>
                             </div><!--user_pro_status end-->
                             <ul class="social_links">
-                                <li><a href="#" title=""><i class="la la-globe"></i> www.example.com</a></li>
                                 <li><a href="#" title=""><i class="fa fa-facebook-square"></i> Http://www.facebook.com/john...</a></li>
                                 <li><a href="#" title=""><i class="fa fa-twitter"></i> Http://www.Twitter.com/john...</a></li>
-                                <li><a href="#" title=""><i class="fa fa-google-plus-square"></i> Http://www.googleplus.com/john...</a></li>
-                                <li><a href="#" title=""><i class="fa fa-behance-square"></i> Http://www.behance.com/john...</a></li>
-                                <li><a href="#" title=""><i class="fa fa-pinterest"></i> Http://www.pinterest.com/john...</a></li>
                                 <li><a href="#" title=""><i class="fa fa-instagram"></i> Http://www.instagram.com/john...</a></li>
-                                <li><a href="#" title=""><i class="fa fa-youtube"></i> Http://www.youtube.com/john...</a></li>
                             </ul>
                         </div><!--user_profile end-->
                         
@@ -411,19 +405,7 @@ $content = $content . '</ul>
                                 <h4>India</h4>
                                 <p>151/4 BT Chownk, Delhi </p>
                             </div><!--user-profile-ov end-->
-                            <div class="user-profile-ov">
-                                <h3>Skills</h3>
-                                <ul>
-                                    <li><a href="#" title="">HTML</a></li>
-                                    <li><a href="#" title="">PHP</a></li>
-                                    <li><a href="#" title="">CSS</a></li>
-                                    <li><a href="#" title="">Javascript</a></li>
-                                    <li><a href="#" title="">Wordpress</a></li>
-                                    <li><a href="#" title="">Photoshop</a></li>
-                                    <li><a href="#" title="">Illustrator</a></li>
-                                    <li><a href="#" title="">Corel Draw</a></li>
-                                </ul>
-                            </div><!--user-profile-ov end-->
+                            <!--user-profile-ov end-->
                         </div><!--product-feed-tab end-->
                         <div class="product-feed-tab" id="portfolio-dd">
                             <div class="portfolio-gallery-sec">

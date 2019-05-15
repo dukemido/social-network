@@ -14,6 +14,14 @@ $country = mysqli_real_escape_string($link, $_POST['country']);
 
 $password_hashed = password_hash($password, PASSWORD_DEFAULT); //encrypt the password before saving in the database
 
+
+$duplicate = mysqli_query($link,"select * FROM users WHERE Email='$email'");
+    if (mysqli_num_rows($duplicate)>0)
+    {
+    echo "This email already exists.\n";
+    return;
+    }else{
+
 $sql = 'INSERT INTO users (Email,Password,FirstName,LastName,Birthdate,Gender,PhoneNumber,HomeTown) VALUES (?,?,?,?,?,?,?,?)';
 
 if ($stmt = mysqli_prepare($link, $sql)) {
@@ -30,6 +38,7 @@ if ($stmt = mysqli_prepare($link, $sql)) {
     } else {
         echo "This email already exists.\n";
     }
+}
 }
 // Close statement
 mysqli_stmt_close($stmt);

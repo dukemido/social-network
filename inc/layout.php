@@ -11,7 +11,7 @@ if ($_SESSION["User"] === null) {
 <head>
     <meta charset="UTF-8">
     <title>
-        <?php echo $title ?> - Social Network</title>
+        <?php echo $title ?> - VW Social Network</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">

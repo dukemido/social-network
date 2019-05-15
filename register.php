@@ -62,13 +62,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="first_name" required="">
+                                    <input class="input--style-4" type="text" name="first_name" required="" minlength="2" maxlength="12">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name" required="">
+                                    <input class="input--style-4" type="text" name="last_name" required="" minlength="2" maxlength="12">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="col-2">
                                 <div class="input-group" data-validate="Valid email is required: ex@abc.xyz">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" required="">
+                                    <input class="input--style-4" type="email" name="email" required="" >
                                 </div>
                             </div>
                             <div class="col-2">
@@ -116,7 +116,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="password" required="">
+                                    <input class="input--style-4" type="password" name="password" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number.">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -141,6 +141,7 @@
         </div>
     </div>
 
+   
     <!-- Jquery JS-->
     <script src="vendor\jquery\jquery.min.js" type="9962aac65d1260dc149b44c6-text/javascript"></script>
     <!-- Vendor JS-->

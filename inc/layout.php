@@ -8,7 +8,6 @@ if ($_SESSION["User"] === null) {
 ?>
 <html>
 
-<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <title>
@@ -28,33 +27,11 @@ if ($_SESSION["User"] === null) {
     <link rel="stylesheet" type="text/css" href="css\responsive.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 </head>
-=======
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            <?php echo $title ?> - VM Network</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <link rel="stylesheet" type="text/css" href="css\animate.css">
-        <link rel="stylesheet" type="text/css" href="css\bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css\line-awesome.css">
-        <link rel="stylesheet" type="text/css" href="css\line-awesome-font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css\font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css\jquery.mCustomScrollbar.min.css">
-        <link rel="stylesheet" type="text/css" href="lib\slick\slick.css">
-        <link rel="stylesheet" type="text/css" href="lib\slick\slick-theme.css">
-        <link rel="stylesheet" type="text/css" href="css\style.css">
-        <link rel="stylesheet" type="text/css" href="css\responsive.css">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-    </head>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
 
 
 <body>
 
 
-<<<<<<< HEAD
     <div class="wrapper">
 
 
@@ -80,6 +57,7 @@ if ($_SESSION["User"] === null) {
                                     <span><img src="images\icon1.png" alt=""></span> Home
                                 </a>
                             </li>
+
                             <li>
                                 <a href="#" title="" class="not-box-open">
                                     <span><img src="images\icon6.png" alt=""></span> Messages
@@ -100,45 +78,6 @@ if ($_SESSION["User"] === null) {
                                                 <span>2 min ago</span>
                                             </div>
                                             <!--notification-info -->
-=======
-        <div class="wrapper">
-            <header>
-                <div class="container">
-                    <div class="header-data">
-                        <div class="logo">
-                            <a href="index.php" title=""><img src="images\logo.png" alt=""></a>
-                        </div>
-                        <!--logo end-->
-                        <div class="search-bar">
-                            <form>
-                                <input type="text" name="search" placeholder="Search...">
-                                <button type="submit"><i class="la la-search"></i></button>
-                            </form>
-                        </div>
-                        <!--search-bar end-->
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="index.php" title="">
-                                        <span><img src="images\icon1.png" alt=""></span> Home
-                                    </a>
-                                </li>
-                                
-                                
-                                <li>
-                                    <a href="friends.html" title="">
-                                        <span><img src="images\icon4.png" alt=""></span> Friends
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="" class="not-box-open">
-                                        <span><img src="images\icon6.png" alt=""></span> Messages
-                                    </a>
-                                    <div class="notification-box msg">
-                                        <div class="nt-title">
-                                            <h4>Setting</h4>
-                                            <a href="#" title="">Clear all</a>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
                                         </div>
                                         <div class="notfication-details">
                                             <div class="noty-user-img">
@@ -224,7 +163,6 @@ if ($_SESSION["User"] === null) {
                                             <a href="#" title="">View All Notification</a>
                                         </div>
                                     </div>
-<<<<<<< HEAD
                                     <!--nott-list end-->
                                 </div>
                                 <!--notification-box end-->
@@ -238,110 +176,13 @@ if ($_SESSION["User"] === null) {
                     <!--menu-btn end-->
                     <div class="user-account">
                         <div class="user-info">
-                            <?php if ($_SESSION['Pic'] == '1') { ?>
-                                <img src="users/<? echo $_SESSION['User'] ?>.jpg" height="30px" width="30px" alt="">
-                            <?php } else if ($_SESSION['Gender'] == 'M') { ?>
-                                <img src="users/default_m.jpg" height="30px" width="30px" alt="">
-
-                            <?php } else if ($_SESSION['Gender'] == 'F') { ?>
-                                <img src="users/default_f.jpg" height="30px" width="30px" alt="">
-
-                            <?php } ?>
-
+                            <img src="<? echo $_SESSION['Pic'] ?>" height="30px" width="30px" alt="">
                             <a href="#" title="">
                                 <?php echo substr($_SESSION['Name'], 0, 4) ?>
                             </a>
                             <i class="la la-sort-down"></i>
                         </div>
                         <div class="user-account-settingss">
-                            <h3>Online Status</h3>
-                            <ul class="on-off-status">
-                                <li>
-                                    <div class="fgt-sec">
-                                        <input type="radio" name="cc" id="c5">
-                                        <label for="c5">
-                                            <span></span>
-                                        </label>
-                                        <small>Online</small>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fgt-sec">
-                                        <input type="radio" name="cc" id="c6">
-                                        <label for="c6">
-                                            <span></span>
-                                        </label>
-                                        <small>Offline</small>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3>Custom Status</h3>
-                            <div class="search_form">
-                                <form>
-                                    <input type="text" name="search">
-                                    <button type="submit">Ok</button>
-                                </form>
-=======
-                                    <!--notification-box end-->
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--nav end-->
-                        <div class="menu-btn">
-                            <a href="#" title=""><i class="fa fa-bars"></i></a>
-                        </div>
-                        <!--menu-btn end-->
-                        <div class="user-account">
-                            <div class="user-info">
-                            <img src="users/default_m.jpg" height="30px" width="30px" alt="">
-
-                                
-                                <a href="#" title="">
-                                    Omar</a>
-                                <i class="la la-sort-down"></i>
-                            </div>
-                            <div class="user-account-settingss">
-                                <h3>Online Status</h3>
-                                <ul class="on-off-status">
-                                    <li>
-                                        <div class="fgt-sec">
-                                            <input type="radio" name="cc" id="c5">
-                                            <label for="c5">
-                                            <span></span>
-                                        </label>
-                                            <small>Online</small>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="fgt-sec">
-                                            <input type="radio" name="cc" id="c6">
-                                            <label for="c6">
-                                            <span></span>
-                                        </label>
-                                            <small>Offline</small>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <h3>Custom Status</h3>
-                                <div class="search_form">
-                                    <form>
-                                        <input type="text" name="search">
-                                        <button type="submit">Ok</button>
-                                    </form>
-                                </div>
-                                <!--search_form end-->
-                                <h3>Setting</h3>
-                                <ul class="us-links">
-                                    <li><a href="profile-account-setting.html" title="">Account Setting</a></li>
-                                    <li><a href="#" title="">Privacy</a></li>
-                                    <li><a href="#" title="">Faqs</a></li>
-                                    <li><a href="#" title="">Terms &amp; Conditions</a></li>
-                                </ul>
-                                <h3 class="tc"><a href="inc/logout.php" title="">Logout</a></h3>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
-                            </div>
-                            <!--search_form end-->
-                            <h3>Setting</h3>
                             <ul class="us-links">
                                 <li><a href="profile-account-setting.html" title="">Account Setting</a></li>
                                 <li><a href="#" title="">Privacy</a></li>
@@ -353,127 +194,16 @@ if ($_SESSION["User"] === null) {
                         <!--user-account-settingss end-->
                     </div>
                 </div>
-<<<<<<< HEAD
                 <!--header-data end-->
             </div>
         </header>
         <!--header end-->
 
         <?php echo $content ?>
-=======
-            </header>
-            <!--header end-->
-            
-                        <div class="main-left-sidebar no-margin">
-                                    <div class="user-data full-width">
-                                        <div class="user-profile">
-                                            <div class="username-dt">
-                                                <div class="usr-pic">
-                                                    <img src="images/resources/user-pic.png" alt="">
-                                                </div>
-                                            </div><!--username-dt end-->
-                                            <div class="user-specs">
-                                                <h3>John Doe</h3>
-                                                <span>Graphic Designer at Self Employed</span>
-                                            </div>
-                                        </div><!--user-profile end-->
-                                        <ul class="user-fw-status">
-                                            <li>
-                                                <h4>Following</h4>
-                                                <span>34</span>
-                                            </li>
-                                            <li>
-                                                <h4>Followers</h4>
-                                                <span>155</span>
-                                            </li>
-                                            <li>
-                                                <a href="profile.php" title="">View Profile</a>
-                                            </li>
-                                        </ul>
-                                    </div><!--user-data end-->
-                                    <div class="suggestions full-width">
-                                        <div class="sd-title">
-                                            <h3>Suggestions</h3>
-                                            <i class="la la-ellipsis-v"></i>
-                                        </div><!--sd-title end-->
-                                        <div class="suggestions-list">
-                                            <div class="suggestion-usd">
-                                                <img src="images/resources/s1.png" alt="">
-                                                <div class="sgt-text">
-                                                    <h4>Jessica William</h4>
-                                                    <span>Graphic Designer</span>
-                                                </div>
-                                                <span><i class="la la-plus"></i></span>
-                                            </div>
-                                            <div class="suggestion-usd">
-                                                <img src="images/resources/s2.png" alt="">
-                                                <div class="sgt-text">
-                                                    <h4>John Doe</h4>
-                                                    <span>PHP Developer</span>
-                                                </div>
-                                                <span><i class="la la-plus"></i></span>
-                                            </div>
-                                            <div class="suggestion-usd">
-                                                <img src="images/resources/s3.png" alt="">
-                                                <div class="sgt-text">
-                                                    <h4>Poonam</h4>
-                                                    <span>Wordpress Developer</span>
-                                                </div>
-                                                <span><i class="la la-plus"></i></span>
-                                            </div>
-                                            <div class="suggestion-usd">
-                                                <img src="images/resources/s4.png" alt="">
-                                                <div class="sgt-text">
-                                                    <h4>Bill Gates</h4>
-                                                    <span>C &amp; C++ Developer</span>
-                                                </div>
-                                                <span><i class="la la-plus"></i></span>
-                                            </div>
-                                            <div class="suggestion-usd">
-                                                <img src="images/resources/s5.png" alt="">
-                                                <div class="sgt-text">
-                                                    <h4>Jessica William</h4>
-                                                    <span>Graphic Designer</span>
-                                                </div>
-                                                <span><i class="la la-plus"></i></span>
-                                            </div>
-                                            <div class="suggestion-usd">
-                                                <img src="images/resources/s6.png" alt="">
-                                                <div class="sgt-text">
-                                                    <h4>John Doe</h4>
-                                                    <span>PHP Developer</span>
-                                                </div>
-                                                <span><i class="la la-plus"></i></span>
-                                            </div>
-                                            <div class="view-more">
-                                                <a href="#" title="">View More</a>
-                                            </div>
-                                        </div><!--suggestions-list end-->
-                                    </div><!--suggestions end-->
-                                    <div class="tags-sec full-width">
-                                        <ul>
-                                            <li><a href="#" title="">Help Center</a></li>
-                                            <li><a href="#" title="">About</a></li>
-                                            <li><a href="#" title="">Privacy Policy</a></li>
-                                            <li><a href="#" title="">Community Guidelines</a></li>
-                                            <li><a href="#" title="">Cookies Policy</a></li>
-                                            <li><a href="#" title="">Career</a></li>
-                                            <li><a href="#" title="">Language</a></li>
-                                            <li><a href="#" title="">Copyright Policy</a></li>
-                                        </ul>
-                                        <div class="cp-sec">
-                                            <img src="images/logo2.png" alt="">
-                                            <p><img src="images/cp.png" alt="">Copyright 2019</p>
-                                        </div>
-                                    </div><!--tags-sec end-->
-                                </div>
-            <?php echo $content ?>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
 
 
-<!--0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-->
 
-<<<<<<< HEAD
+
         <div class="post-popup pst-pj">
             <div class="post-project">
                 <h3>Post a project</h3>
@@ -482,52 +212,6 @@ if ($_SESSION["User"] === null) {
                         <div class="row">
                             <div class="col-lg-12">
                                 <input type="text" name="title" placeholder="Title">
-=======
-            <div class="post-popup pst-pj">
-                <div class="post-project">
-                    <h3>Post a project</h3>
-                    <div class="post-project-fields">
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <input type="text" name="title" placeholder="Title">
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="inp-field">
-                                        <select>
-                                        <option>Category</option>
-                                        <option>Category 1</option>
-                                        <option>Category 2</option>
-                                        <option>Category 3</option>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <input type="text" name="skills" placeholder="Skills">
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="price-sec">
-                                        <div class="price-br">
-                                            <input type="text" name="price1" placeholder="Price">
-                                            <i class="la la-dollar"></i>
-                                        </div>
-                                        <span>To</span>
-                                        <div class="price-br">
-                                            <input type="text" name="price1" placeholder="Price">
-                                            <i class="la la-dollar"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <textarea name="description" placeholder="Description"></textarea>
-                                </div>
-                                <div class="col-lg-12">
-                                    <ul>
-                                        <li><button class="active" type="submit" value="post">Post</button></li>
-                                        <li><a href="#" title="">Cancel</a></li>
-                                    </ul>
-                                </div>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
                             </div>
                             <div class="col-lg-12">
                                 <div class="inp-field">
@@ -538,7 +222,6 @@ if ($_SESSION["User"] === null) {
                                         <option>Category 3</option>
                                     </select>
                                 </div>
-<<<<<<< HEAD
                             </div>
                             <div class="col-lg-12">
                                 <input type="text" name="skills" placeholder="Skills">
@@ -548,16 +231,6 @@ if ($_SESSION["User"] === null) {
                                     <div class="price-br">
                                         <input type="text" name="price1" placeholder="Price">
                                         <i class="la la-dollar"></i>
-=======
-                                <div class="col-lg-12">
-                                    <div class="inp-field">
-                                        <select>
-                                        <option>Category</option>
-                                        <option>Category 1</option>
-                                        <option>Category 2</option>
-                                        <option>Category 3</option>
-                                    </select>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
                                     </div>
                                     <span>To</span>
                                     <div class="price-br">
@@ -565,7 +238,6 @@ if ($_SESSION["User"] === null) {
                                         <i class="la la-dollar"></i>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                             </div>
                             <div class="col-lg-12">
                                 <textarea name="description" placeholder="Description"></textarea>
@@ -603,15 +275,6 @@ if ($_SESSION["User"] === null) {
                                         <option>Category 2</option>
                                         <option>Category 3</option>
                                     </select>
-=======
-                                <div class="col-lg-6">
-                                    <div class="inp-field">
-                                        <select>
-                                        <option>Full Time</option>
-                                        <option>Half time</option>
-                                    </select>
-                                    </div>
->>>>>>> f44eaa6d984137e242ac0ae36b9f663155a7958f
                                 </div>
                             </div>
                             <div class="col-lg-12">

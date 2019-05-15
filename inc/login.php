@@ -29,6 +29,14 @@ if ($stmt = $link->prepare('SELECT * FROM users WHERE Email = ?')) {
             $_SESSION['Name'] = $row['FirstName'] . ' ' . $row['LastName'];
             $_SESSION['Pic'] = $row['HasPic'];
             $_SESSION['Gender'] = $row['Gender'];
+            if ($row['HasPic'] == '1') {
+                $_SESSION['Pic'] = 'users/' . $_SESSION['User'] . '.jpg';
+            } else if ($_SESSION['Gender'] == 'M') {
+                $_SESSION['Pic'] = 'users/default_m.jpg';
+            } else if ($_SESSION['Gender'] == 'F') {
+                $_SESSION['Pic'] = 'users/default_f.jpg';
+            }
+
             echo 'success';
         } else {
             echo 'Invalid Pass';
@@ -37,4 +45,3 @@ if ($stmt = $link->prepare('SELECT * FROM users WHERE Email = ?')) {
         echo $stmt->error;
     }
 }
-?>

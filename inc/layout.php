@@ -12,7 +12,7 @@ if($_SESSION["User"] === null)
     <head>
         <meta charset="UTF-8">
         <title>
-            <?php echo $title ?> - Social Network</title>
+            <?php echo $title ?> - VM Network</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -34,9 +34,6 @@ if($_SESSION["User"] === null)
 
 
         <div class="wrapper">
-
-
-
             <header>
                 <div class="container">
                     <div class="header-data">
@@ -58,28 +55,11 @@ if($_SESSION["User"] === null)
                                         <span><img src="images\icon1.png" alt=""></span> Home
                                     </a>
                                 </li>
+                                
+                                
                                 <li>
-                                    <a href="companies.html" title="">
-                                        <span><img src="images\icon2.png" alt=""></span> Companies
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="projects.html" title="">
-                                        <span><img src="images\icon3.png" alt=""></span> Projects
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profiles.html" title="">
-                                        <span><img src="images\icon4.png" alt=""></span> Profiles
-                                    </a>
-                                    <ul>
-                                        <li><a href="user-profile.html" title="">User Profile</a></li>
-                                        <li><a href="my-profile-feed.html" title="">my-profile-feed</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="jobs.html" title="">
-                                        <span><img src="images\icon5.png" alt=""></span> Jobs
+                                    <a href="friends.html" title="">
+                                        <span><img src="images\icon4.png" alt=""></span> Friends
                                     </a>
                                 </li>
                                 <li>
@@ -200,19 +180,11 @@ if($_SESSION["User"] === null)
                         <!--menu-btn end-->
                         <div class="user-account">
                             <div class="user-info">
-                                <?php if($_SESSION['Pic'] == '1') {?>
-                                <img src="users/<? echo $_SESSION['User']?>.jpg" height="30px" width="30px" alt="">
-                                <?php } else if($_SESSION['Gender'] == 'M') { ?>
-                                <img src="users/default_m.jpg" height="30px" width="30px" alt="">
+                            <img src="users/default_m.jpg" height="30px" width="30px" alt="">
 
-                                <?php } else if($_SESSION['Gender'] == 'F') { ?>
-                                <img src="users/default_f.jpg" height="30px" width="30px" alt="">
-
-                                <?php } ?>
-
+                                
                                 <a href="#" title="">
-                                    <?php echo substr($_SESSION['Name'],0,4) ?>
-                                </a>
+                                    Omar</a>
                                 <i class="la la-sort-down"></i>
                             </div>
                             <div class="user-account-settingss">
@@ -222,8 +194,8 @@ if($_SESSION["User"] === null)
                                         <div class="fgt-sec">
                                             <input type="radio" name="cc" id="c5">
                                             <label for="c5">
-											<span></span>
-										</label>
+                                            <span></span>
+                                        </label>
                                             <small>Online</small>
                                         </div>
                                     </li>
@@ -231,8 +203,8 @@ if($_SESSION["User"] === null)
                                         <div class="fgt-sec">
                                             <input type="radio" name="cc" id="c6">
                                             <label for="c6">
-											<span></span>
-										</label>
+                                            <span></span>
+                                        </label>
                                             <small>Offline</small>
                                         </div>
                                     </li>
@@ -261,11 +233,114 @@ if($_SESSION["User"] === null)
                 </div>
             </header>
             <!--header end-->
-
+            
+                        <div class="main-left-sidebar no-margin">
+                                    <div class="user-data full-width">
+                                        <div class="user-profile">
+                                            <div class="username-dt">
+                                                <div class="usr-pic">
+                                                    <img src="images/resources/user-pic.png" alt="">
+                                                </div>
+                                            </div><!--username-dt end-->
+                                            <div class="user-specs">
+                                                <h3>John Doe</h3>
+                                                <span>Graphic Designer at Self Employed</span>
+                                            </div>
+                                        </div><!--user-profile end-->
+                                        <ul class="user-fw-status">
+                                            <li>
+                                                <h4>Following</h4>
+                                                <span>34</span>
+                                            </li>
+                                            <li>
+                                                <h4>Followers</h4>
+                                                <span>155</span>
+                                            </li>
+                                            <li>
+                                                <a href="profile.php" title="">View Profile</a>
+                                            </li>
+                                        </ul>
+                                    </div><!--user-data end-->
+                                    <div class="suggestions full-width">
+                                        <div class="sd-title">
+                                            <h3>Suggestions</h3>
+                                            <i class="la la-ellipsis-v"></i>
+                                        </div><!--sd-title end-->
+                                        <div class="suggestions-list">
+                                            <div class="suggestion-usd">
+                                                <img src="images/resources/s1.png" alt="">
+                                                <div class="sgt-text">
+                                                    <h4>Jessica William</h4>
+                                                    <span>Graphic Designer</span>
+                                                </div>
+                                                <span><i class="la la-plus"></i></span>
+                                            </div>
+                                            <div class="suggestion-usd">
+                                                <img src="images/resources/s2.png" alt="">
+                                                <div class="sgt-text">
+                                                    <h4>John Doe</h4>
+                                                    <span>PHP Developer</span>
+                                                </div>
+                                                <span><i class="la la-plus"></i></span>
+                                            </div>
+                                            <div class="suggestion-usd">
+                                                <img src="images/resources/s3.png" alt="">
+                                                <div class="sgt-text">
+                                                    <h4>Poonam</h4>
+                                                    <span>Wordpress Developer</span>
+                                                </div>
+                                                <span><i class="la la-plus"></i></span>
+                                            </div>
+                                            <div class="suggestion-usd">
+                                                <img src="images/resources/s4.png" alt="">
+                                                <div class="sgt-text">
+                                                    <h4>Bill Gates</h4>
+                                                    <span>C &amp; C++ Developer</span>
+                                                </div>
+                                                <span><i class="la la-plus"></i></span>
+                                            </div>
+                                            <div class="suggestion-usd">
+                                                <img src="images/resources/s5.png" alt="">
+                                                <div class="sgt-text">
+                                                    <h4>Jessica William</h4>
+                                                    <span>Graphic Designer</span>
+                                                </div>
+                                                <span><i class="la la-plus"></i></span>
+                                            </div>
+                                            <div class="suggestion-usd">
+                                                <img src="images/resources/s6.png" alt="">
+                                                <div class="sgt-text">
+                                                    <h4>John Doe</h4>
+                                                    <span>PHP Developer</span>
+                                                </div>
+                                                <span><i class="la la-plus"></i></span>
+                                            </div>
+                                            <div class="view-more">
+                                                <a href="#" title="">View More</a>
+                                            </div>
+                                        </div><!--suggestions-list end-->
+                                    </div><!--suggestions end-->
+                                    <div class="tags-sec full-width">
+                                        <ul>
+                                            <li><a href="#" title="">Help Center</a></li>
+                                            <li><a href="#" title="">About</a></li>
+                                            <li><a href="#" title="">Privacy Policy</a></li>
+                                            <li><a href="#" title="">Community Guidelines</a></li>
+                                            <li><a href="#" title="">Cookies Policy</a></li>
+                                            <li><a href="#" title="">Career</a></li>
+                                            <li><a href="#" title="">Language</a></li>
+                                            <li><a href="#" title="">Copyright Policy</a></li>
+                                        </ul>
+                                        <div class="cp-sec">
+                                            <img src="images/logo2.png" alt="">
+                                            <p><img src="images/cp.png" alt="">Copyright 2019</p>
+                                        </div>
+                                    </div><!--tags-sec end-->
+                                </div>
             <?php echo $content ?>
 
 
-
+<!--0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-->
 
             <div class="post-popup pst-pj">
                 <div class="post-project">
@@ -279,11 +354,11 @@ if($_SESSION["User"] === null)
                                 <div class="col-lg-12">
                                     <div class="inp-field">
                                         <select>
-										<option>Category</option>
-										<option>Category 1</option>
-										<option>Category 2</option>
-										<option>Category 3</option>
-									</select>
+                                        <option>Category</option>
+                                        <option>Category 1</option>
+                                        <option>Category 2</option>
+                                        <option>Category 3</option>
+                                    </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -333,11 +408,11 @@ if($_SESSION["User"] === null)
                                 <div class="col-lg-12">
                                     <div class="inp-field">
                                         <select>
-										<option>Category</option>
-										<option>Category 1</option>
-										<option>Category 2</option>
-										<option>Category 3</option>
-									</select>
+                                        <option>Category</option>
+                                        <option>Category 1</option>
+                                        <option>Category 2</option>
+                                        <option>Category 3</option>
+                                    </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -352,9 +427,9 @@ if($_SESSION["User"] === null)
                                 <div class="col-lg-6">
                                     <div class="inp-field">
                                         <select>
-										<option>Full Time</option>
-										<option>Half time</option>
-									</select>
+                                        <option>Full Time</option>
+                                        <option>Half time</option>
+                                    </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

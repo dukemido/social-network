@@ -122,7 +122,11 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Country</label>
-                                    <input class="input--style-4" type="text" name="country" required="">
+                                    <select class="input--style-4" type="text" name="country" required="" style="height:50px; width:260px; border-style:hidden;">
+                                    <option value = "Egypt" selected>Egypt</option>
+                                    <option value = "United Kindom">United Kindom</option>
+                                    <option value = "United Stats">United Stats</option>
+                                 </select>
                                 </div>
                             </div>
                         </div>
@@ -152,5 +156,14 @@
     <!-- Main JS-->
     <script src="js\global.js" type="9962aac65d1260dc149b44c6-text/javascript"></script>
 
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="9962aac65d1260dc149b44c6-text/javascript"></script>
+<script type="9962aac65d1260dc149b44c6-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="9962aac65d1260dc149b44c6-|49" defer=""></script></body>
+
 </html>
-<!-- end document-->

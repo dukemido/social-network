@@ -49,40 +49,7 @@ $content = ' <main>
                         </div>
                         <!--post-topbar end-->
                         <div class="posts-section">
-                            <div class="post-bar">
-                                <div class="post_topbar">
-                                    <div class="usy-dt">
-                                        <img src="images\resources\us-pic.png" alt="">
-                                        <div class="usy-name">
-                                            <h3>John Doe</h3>
-                                            <span><img src="images\clock.png" alt="">3 min ago</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="epi-sec">
-                                    <ul class="descp">
-                                        <li><img src="images\icon8.png" alt=""><span>Epic Coder</span></li>
-                                        <li><img src="images\icon9.png" alt=""><span>India</span></li>
-                                    </ul>
-                                </div>
-                                <div class="job_descp">
-                                    <h3>Senior Wordpress Developer</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id magna sit amet... <a href="#" title="">view more</a></p>
-                                </div>
-                                <div class="job-status-bar">
-                                    <ul class="like-com">
-                                        <li>
-                                            <a href="#"><i class="la la-heart"></i> Like</a>
-                                            <img src="images\liked-img.png" alt="">
-                                            <span>25</span>
-                                        </li>
-                                        <li><a href="#" title="" class="com"><img src="images\com.png" alt=""> Comment 15</a></li>
-                                    </ul>
-                                    <a><i class="la la-eye"></i>Views 50</a>
-                                </div>
-                            </div>
-                            <!--post-bar end-->
+                            
                             <div class="top-profiles">
                                 <div class="pf-hd">
                                     <h3>Friend Suggestions</h3>
@@ -152,283 +119,112 @@ $content = ' <main>
                                 </div>
                                 <!--profiles-slider end-->
                             </div>
-                            <!--top-profiles end-->
-                            <div class="post-bar">
-                                <div class="post_topbar">
-                                    <div class="usy-dt">
-                                        <img src="images\resources\us-pic.png" alt="">
-                                        <div class="usy-name">
-                                            <h3>John Doe</h3>
-                                            <span><img src="images\clock.png" alt="">3 min ago</span>
-                                        </div>
-                                    </div>
-                                    <div class="ed-opts">
-                                        <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
-                                        <ul class="ed-options">
-                                            <li><a href="#" title="">Edit Post</a></li>
-                                            <li><a href="#" title="">Unsaved</a></li>
-                                            <li><a href="#" title="">Unbid</a></li>
-                                            <li><a href="#" title="">Close</a></li>
-                                            <li><a href="#" title="">Hide</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="epi-sec">
-                                    <ul class="descp">
-                                        <li><img src="images\icon8.png" alt=""><span>Epic Coder</span></li>
-                                        <li><img src="images\icon9.png" alt=""><span>India</span></li>
-                                    </ul>
-                                </div>
-                                <div class="job_descp">
-                                    <h3>Senior Wordpress Developer</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id magna sit amet... <a href="#" title="">view more</a></p>
-                                </div>
-                                <div class="job-status-bar">
-                                    <ul class="like-com">
-                                        <li>
-                                            <a href="#"><i class="la la-heart"></i> Like</a>
-                                            <img src="images\liked-img.png" alt="">
-                                            <span>25</span>
-                                        </li>
-                                        <li><a href="#" title="" class="com"><img src="images\com.png" alt=""> Comment 15</a></li>
-                                    </ul>
-                                    <a><i class="la la-eye"></i>Views 50</a>
-                                </div>
-                            </div>
-                            <!--post-bar end-->
-                            <div class="posty">
-                                <div class="post-bar no-margin">
-                                    <div class="post_topbar">
-                                        <div class="usy-dt">
-                                            <img src="images\resources\us-pc2.png" alt="">
-                                            <div class="usy-name">
-                                                <h3>John Doe</h3>
-                                                <span><img src="images\clock.png" alt="">3 min ago</span>
-                                            </div>
-                                        </div>
-                                        <div class="ed-opts">
-                                            <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
-                                            <ul class="ed-options">
-                                                <li><a href="#" title="">Edit Post</a></li>
-                                                <li><a href="#" title="">Unsaved</a></li>
-                                                <li><a href="#" title="">Unbid</a></li>
-                                                <li><a href="#" title="">Close</a></li>
-                                                <li><a href="#" title="">Hide</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="epi-sec">
-                                        <ul class="descp">
-                                            <li><img src="images\icon8.png" alt=""><span>Epic Coder</span></li>
-                                            <li><img src="images\icon9.png" alt=""><span>India</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="job_descp">
-                                        <h3>Senior Wordpress Developer</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id magna sit amet... <a href="#" title="">view more</a></p>
-                                    </div>
-                                    <div class="job-status-bar">
-                                        <ul class="like-com">
-                                            <li>
-                                                <a href="#"><i class="la la-heart"></i> Like</a>
-                                                <img src="images\liked-img.png" alt="">
-                                                <span>25</span>
-                                            </li>
-                                            <li><a href="#" title="" class="com"><img src="images\com.png" alt=""> Comment 15</a></li>
-                                        </ul>
-                                        <a><i class="la la-eye"></i>Views 50</a>
-                                    </div>
-                                </div>
-                                <!--post-bar end-->
-                                <div class="comment-section">
-                                    <div class="plus-ic">
-                                        <i class="la la-plus"></i>
-                                    </div>
-                                    <div class="comment-sec">
-                                        <ul>
-                                            <li>
-                                                <div class="comment-list">
-                                                    <div class="bg-img">
-                                                        <img src="images\resources\bg-img1.png" alt="">
-                                                    </div>
-                                                    <div class="comment">
-                                                        <h3>John Doe</h3>
-                                                        <span><img src="images\clock.png" alt=""> 3 min ago</span>
-                                                        <p>Lorem ipsum dolor sit amet, </p>
-                                                        <a href="#" title="" class="active"><i class="fa fa-reply-all"></i>Reply</a>
-                                                    </div>
-                                                </div>
-                                                <!--comment-list end-->
-                                                <ul>
-                                                    <li>
-                                                        <div class="comment-list">
-                                                            <div class="bg-img">
-                                                                <img src="images\resources\bg-img2.png" alt="">
-                                                            </div>
-                                                            <div class="comment">
-                                                                <h3>John Doe</h3>
-                                                                <span><img src="images\clock.png" alt=""> 3 min ago</span>
-                                                                <p>Hi John </p>
-                                                                <a href="#" title=""><i class="fa fa-reply-all"></i>Reply</a>
-                                                            </div>
+                            <!--top-profiles end-->';
+$id = $_SESSION['User'];
+$count = 0;
+include('inc/config.php');
+if ($stmt = $link->prepare("SELECT * from posts p, users u WHERE p.UserId= '" . $id . "' AND p.UserId = u.UserId ORDER BY PostTime")) {
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+        if ($row['HasPic'] == '1') {
+            $pic = 'users/' . $row['UserId'] . '.jpg';
+        } else if ($row['Gender'] == 'M') {
+            $pic = 'users/default_m.jpg';
+        } else if ($row['Gender'] == 'F') {
+            $pic['Pic'] = 'users/default_f.jpg';
+        }
+
+        if ($is_public)
+            $perm = 'Public';
+        else $perm = 'Private';
+        $count++;
+
+        $content = $content . '<div class="post-bar">
+                                                        <div class="post_topbar">
+                                                            <div class="usy-dt">
+                                                                <img src="' . $pic . '" height="50px" width="50px" alt="">
+                                                                <div class="usy-name">
+                                                                    <h3>' . $row['FirstName'] . ' ' . $row['LastName'] . '</h3>
+                                                                    <span><img src="images\clock.png" alt="">' . $row['PostTime'] . '</span>
+                                                                    <span>Permission: ' . $perm . '</span>
+                                                                </div>
+                                                            </div>';
+        if ($id == $_SESSION['User'])
+
+            $content = $content . '<div class="ed-opts">
+                                                            <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                                                            <ul class="ed-options">
+                                                                <li><a href="#" title="">Delete</a></li>
+                                                            </ul>
+                                                            </div>';
+
+        $content = $content . '</div>
+                                                       
+                                                        <div class="job_descp">
+                                                            <p>' . $row['Caption'] . '</p>
                                                         </div>
-                                                        <!--comment-list end-->
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="comment-list">
-                                                    <div class="bg-img">
-                                                        <img src="images\resources\bg-img3.png" alt="">
+                                                        
                                                     </div>
-                                                    <div class="comment">
-                                                        <h3>John Doe</h3>
-                                                        <span><img src="images\clock.png" alt=""> 3 min ago</span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at.</p>
-                                                        <a href="#" title=""><i class="fa fa-reply-all"></i>Reply</a>
+                                                    <!--post-bar end-->';
+    }
+}
+
+if ($stmt = $link->prepare("SELECT * from posts p, users u, friends f WHERE f.OwnerId='" . $id . "' AND p.UserId = f.FriendId AND u.UserId=p.UserId ORDER BY PostTime DESC")) {
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+        if ($row['HasPic'] == '1') {
+            $pic = 'users/' . $row['UserId'] . '.jpg';
+        } else if ($row['Gender'] == 'M') {
+            $pic = 'users/default_m.jpg';
+        } else if ($row['Gender'] == 'F') {
+            $pic['Pic'] = 'users/default_f.jpg';
+        }
+
+        if ($is_public)
+            $perm = 'Public';
+        else $perm = 'Private';
+        $count++;
+
+        $content = $content . '<div class="post-bar">
+                                                        <div class="post_topbar">
+                                                            <div class="usy-dt">
+                                                                <img src="' . $pic . '" height="50px" width="50px" alt="">
+                                                                <div class="usy-name">
+                                                                    <h3>' . $row['FirstName'] . ' ' . $row['LastName'] . '</h3>
+                                                                    <span><img src="images\clock.png" alt="">' . $row['PostTime'] . '</span>
+                                                                    <span>Permission: ' . $perm . '</span>
+                                                                </div>
+                                                            </div>';
+        if ($id == $_SESSION['User'])
+
+            $content = $content . '<div class="ed-opts">
+                                                            <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                                                            <ul class="ed-options">
+                                                                <li><a href="#" title="">Delete</a></li>
+                                                            </ul>
+                                                            </div>';
+
+        $content = $content . '</div>
+                                                       
+                                                        <div class="job_descp">
+                                                            <p>' . $row['Caption'] . '</p>
+                                                        </div>
+                                                        
                                                     </div>
-                                                </div>
-                                                <!--comment-list end-->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!--comment-sec end-->
-                                    <div class="post-comment">
-                                        <div class="cm_img">
-                                            <img src="images\resources\bg-img4.png" alt="">
-                                        </div>
-                                        <div class="comment_box">
-                                            <form>
-                                                <input type="text" placeholder="Post a comment">
-                                                <button type="submit">Send</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!--post-comment end-->
-                                </div>
-                                <!--comment-section end-->
-                            </div>
+                                                    <!--post-bar end-->';
+    }
+}
+$content = $content . '<!--post-bar end-->
+                            
                             <!--posty end-->
-                            <div class="process-comm">
-                                <a href="#" title=""><img src="images\process-icon.png" alt=""></a>
-                            </div>
-                            <!--process-comm end-->
-                        </div>
+                          </div>
                         <!--posts-section end-->
                     </div>
                     <!--main-ws-sec end-->
                 </div>
-                <div class="col-lg-3 pd-right-none no-pd">
-                    <div class="right-sidebar">
-                        <div class="widget widget-jobs">
-                            <div class="sd-title">
-                                <h3>Top Jobs</h3>
-                                <i class="la la-ellipsis-v"></i>
-                            </div>
-                            <div class="jobs-list">
-                                <div class="job-info">
-                                    <div class="job-details">
-                                        <h3>Senior Product Designer</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-                                    </div>
-                                </div>
-                                <!--job-info end-->
-                                <div class="job-info">
-                                    <div class="job-details">
-                                        <h3>Senior UI / UX Designer</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-                                    </div>
-                                </div>
-                                <!--job-info end-->
-                                <div class="job-info">
-                                    <div class="job-details">
-                                        <h3>Junior Seo Designer</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-                                    </div>
-                                </div>
-                                <!--job-info end-->
-                                <div class="job-info">
-                                    <div class="job-details">
-                                        <h3>Senior PHP Designer</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-                                    </div>
-                                </div>
-                                <!--job-info end-->
-                                <div class="job-info">
-                                    <div class="job-details">
-                                        <h3>Senior Developer Designer</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-                                    </div>
-                                </div>
-                                <!--job-info end-->
-                            </div>
-                            <!--jobs-list end-->
-                        </div>
-                        <!--widget-jobs end-->
-                        <div class="widget suggestions full-width">
-                            <div class="sd-title">
-                                <h3>Most Viewed People</h3>
-                                <i class="la la-ellipsis-v"></i>
-                            </div>
-                            <!--sd-title end-->
-                            <div class="suggestions-list">
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s1.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Jessica William</h4>
-                                        <span>Graphic Designer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s2.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>John Doe</h4>
-                                        <span>PHP Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s3.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Poonam</h4>
-                                        <span>Wordpress Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s4.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Bill Gates</h4>
-                                        <span>C &amp; C++ Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s5.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Jessica William</h4>
-                                        <span>Graphic Designer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s6.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>John Doe</h4>
-                                        <span>PHP Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="view-more">
-                                    <a href="#" title="">View More</a>
-                                </div>
-                            </div>
-                            <!--suggestions-list end-->
-                        </div>
-                    </div>
-                    <!--right-sidebar end-->
-                </div>
+                
             </div>
         </div><!-- main-section-data end-->
     </div>

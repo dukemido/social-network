@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+   
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
@@ -60,12 +60,12 @@
                         </a>
                     </div>
                     <div class="login100-pic js-tilt" data-tilt="">
-                    <img src="images\banner.png" alt="IMG" style="margin-top:15px; margin-left:10px;">
-                </div>
+                        <img src="images\banner.png" alt="IMG" style="margin-top:15px; margin-left:10px;">
+                    </div>
                     <div style="margin-top:10px; margin-left:25%;">
                         <a class="txt2" href="register.php">
                             Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true" ></i>
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
                 </form>

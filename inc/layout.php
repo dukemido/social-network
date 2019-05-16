@@ -4,7 +4,7 @@ if ($_SESSION["User"] === null) {
     header("location: login.php");
     return;
 }
-
+require_once('inc/config.php');
 ?>
 <html>
 
@@ -57,111 +57,46 @@ if ($_SESSION["User"] === null) {
                                     <span><img src="images\icon1.png" alt=""></span> Home
                                 </a>
                             </li>
-
                             <li>
                                 <a href="#" title="" class="not-box-open">
-                                    <span><img src="images\icon6.png" alt=""></span> Messages
-                                </a>
-                                <div class="notification-box msg">
-                                    <div class="nt-title">
-                                        <h4>Setting</h4>
-                                        <a href="#" title="">Clear all</a>
-                                    </div>
-                                    <div class="nott-list">
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img1.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="messages.html" title="">Jassica William</a> </h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img2.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="messages.html" title="">Jassica William</a></h3>
-                                                <p>Lorem ipsum dolor sit amet.</p>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img3.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="messages.html" title="">Jassica William</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et dolore magna aliqua.</p>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="view-all-nots">
-                                            <a href="messages.html" title="">View All Messsages</a>
-                                        </div>
-                                    </div>
-                                    <!--nott-list end-->
-                                </div>
-                                <!--notification-box end-->
-                            </li>
-                            <li>
-                                <a href="#" title="" class="not-box-open">
-                                    <span><img src="images\icon7.png" alt=""></span> Notification
+                                    <span><img src="images\icon7.png" alt=""></span> Friend Requests
                                 </a>
                                 <div class="notification-box">
                                     <div class="nt-title">
-                                        <h4>Setting</h4>
-                                        <a href="#" title="">Clear all</a>
+                                        <h4>Top 5 Notifications are shown.</h4>
                                     </div>
                                     <div class="nott-list">
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img1.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img2.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img3.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="notfication-details">
-                                            <div class="noty-user-img">
-                                                <img src="images\resources\ny-img2.png" alt="">
-                                            </div>
-                                            <div class="notification-info">
-                                                <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                <span>2 min ago</span>
-                                            </div>
-                                            <!--notification-info -->
-                                        </div>
-                                        <div class="view-all-nots">
-                                            <a href="#" title="">View All Notification</a>
-                                        </div>
+                                        <?php
+                                        $sql = "SELECT * from notifications WHERE OwnerId='" . $_SESSION['User'] . "' ORDER BY Date DESC";
+                                        $count = 0;
+                                        if ($stmt = $link->prepare($sql)) {
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+                                            while ($row = $result->fetch_assoc()) {
+                                                ?>
+                                                <div class="notfication-details">
+                                                    <div class="noty-user-img">
+                                                        <img src="<?php echo $row['Pic'] ?>" alt="">
+                                                    </div>
+                                                    <div class="notification-info">
+                                                        <h3><a href="<?php echo $row['Link'] ?>" title=""><?php echo $row['Name'] ?></a> <?php echo $row['Message'] ?>.</h3>
+                                                    </div>
+                                                    <!--notification-info -->
+                                                </div>
+                                                <?php
+                                                $count++;
+                                            }
+                                            if ($count == 0) {
+                                                ?>
+                                                <div class="view-all-nots">
+                                                    <a href="#" title="">No Notifications Found</a>
+                                                </div>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+
+
                                     </div>
                                     <!--nott-list end-->
                                 </div>

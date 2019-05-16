@@ -1,7 +1,7 @@
 <?php
 session_start();
 $title = 'Home';
-$content = '<main>
+$content = ' <main>
 <div class="main-section">
     <div class="container">
         <div class="main-section-data">
@@ -14,21 +14,25 @@ $content = '<main>
                                     <div class="usr-pic">
                                         <img src="' . $_SESSION['Pic'] . '" height="100px" width="100px" alt="">
                                     </div>
-                                </div><!--username-dt end-->
+                                </div>
+                                <!--username-dt end-->
                                 <div class="user-specs">
                                     <h3>' . $_SESSION['Name'] . '</h3>
                                     <span>' . $_SESSION['AboutMe'] . '.</span>
                                 </div>
-                            </div><!--user-profile end-->
+                            </div>
+                            <!--user-profile end-->
                             <ul class="user-fw-status">
                                 <li>
                                     <a href="profile.php" title="">View Profile</a>
                                 </li>
                             </ul>
-                        </div><!--user-data end-->
-                        
-                        
-                    </div><!--main-left-sidebar end-->
+                        </div>
+                        <!--user-data end-->
+
+
+                    </div>
+                    <!--main-left-sidebar end-->
                 </div>
                 <div class="col-lg-6 col-md-8 no-pd">
                     <div class="main-ws-sec">
@@ -40,8 +44,10 @@ $content = '<main>
                                 <ul>
                                     <li><a class="post-jb active" href="#" title="">Post</a></li>
                                 </ul>
-                            </div><!--post-st end-->
-                        </div><!--post-topbar end-->
+                            </div>
+                            <!--post-st end-->
+                        </div>
+                        <!--post-topbar end-->
                         <div class="posts-section">
                             <div class="post-bar">
                                 <div class="post_topbar">
@@ -52,16 +58,7 @@ $content = '<main>
                                             <span><img src="images\clock.png" alt="">3 min ago</span>
                                         </div>
                                     </div>
-                                    <div class="ed-opts">
-                                        <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
-                                        <ul class="ed-options">
-                                            <li><a href="#" title="">Edit Post</a></li>
-                                            <li><a href="#" title="">Unsaved</a></li>
-                                            <li><a href="#" title="">Unbid</a></li>
-                                            <li><a href="#" title="">Close</a></li>
-                                            <li><a href="#" title="">Hide</a></li>
-                                        </ul>
-                                    </div>
+
                                 </div>
                                 <div class="epi-sec">
                                     <ul class="descp">
@@ -79,15 +76,16 @@ $content = '<main>
                                             <a href="#"><i class="la la-heart"></i> Like</a>
                                             <img src="images\liked-img.png" alt="">
                                             <span>25</span>
-                                        </li> 
+                                        </li>
                                         <li><a href="#" title="" class="com"><img src="images\com.png" alt=""> Comment 15</a></li>
                                     </ul>
                                     <a><i class="la la-eye"></i>Views 50</a>
                                 </div>
-                            </div><!--post-bar end-->
+                            </div>
+                            <!--post-bar end-->
                             <div class="top-profiles">
                                 <div class="pf-hd">
-                                    <h3>Top Profiles</h3>
+                                    <h3>Friend Suggestions</h3>
                                     <i class="la la-ellipsis-v"></i>
                                 </div>
                                 <div class="profiles-slider">
@@ -99,7 +97,8 @@ $content = '<main>
                                             <li><a href="#" title="" class="followw">Add Friend</a></li>
                                         </ul>
                                         <a href="#" title="">View Profile</a>
-                                    </div><!--user-profy end-->
+                                    </div>
+                                    <!--user-profy end-->
                                     <div class="user-profy">
                                         <img src="images\resources\user2.png" alt="">
                                         <h3>John Doe</h3>
@@ -108,7 +107,8 @@ $content = '<main>
                                             <li><a href="#" title="" class="followw">Add Friend</a></li>
                                         </ul>
                                         <a href="#" title="">View Profile</a>
-                                    </div><!--user-profy end-->
+                                    </div>
+                                    <!--user-profy end-->
                                     <div class="user-profy">
                                         <img src="images\resources\user3.png" alt="">
                                         <h3>John Doe</h3>
@@ -117,7 +117,8 @@ $content = '<main>
                                             <li><a href="#" title="" class="followw">Add Friend</a></li>
                                         </ul>
                                         <a href="#" title="">View Profile</a>
-                                    </div><!--user-profy end-->
+                                    </div>
+                                    <!--user-profy end-->
                                     <div class="user-profy">
                                         <img src="images\resources\user1.png" alt="">
                                         <h3>John Doe</h3>
@@ -126,7 +127,8 @@ $content = '<main>
                                             <li><a href="#" title="" class="followw">Add Friend</a></li>
                                         </ul>
                                         <a href="#" title="">View Profile</a>
-                                    </div><!--user-profy end-->
+                                    </div>
+                                    <!--user-profy end-->
                                     <div class="user-profy">
                                         <img src="images\resources\user2.png" alt="">
                                         <h3>John Doe</h3>
@@ -135,7 +137,8 @@ $content = '<main>
                                             <li><a href="#" title="" class="followw">Add Friend</a></li>
                                         </ul>
                                         <a href="#" title="">View Profile</a>
-                                    </div><!--user-profy end-->
+                                    </div>
+                                    <!--user-profy end-->
                                     <div class="user-profy">
                                         <img src="images\resources\user3.png" alt="">
                                         <h3>John Doe</h3>
@@ -144,9 +147,12 @@ $content = '<main>
                                             <li><a href="#" title="" class="followw">Add Friend</a></li>
                                         </ul>
                                         <a href="#" title="">View Profile</a>
-                                    </div><!--user-profy end-->
-                                </div><!--profiles-slider end-->
-                            </div><!--top-profiles end-->
+                                    </div>
+                                    <!--user-profy end-->
+                                </div>
+                                <!--profiles-slider end-->
+                            </div>
+                            <!--top-profiles end-->
                             <div class="post-bar">
                                 <div class="post_topbar">
                                     <div class="usy-dt">
@@ -183,12 +189,13 @@ $content = '<main>
                                             <a href="#"><i class="la la-heart"></i> Like</a>
                                             <img src="images\liked-img.png" alt="">
                                             <span>25</span>
-                                        </li> 
+                                        </li>
                                         <li><a href="#" title="" class="com"><img src="images\com.png" alt=""> Comment 15</a></li>
                                     </ul>
                                     <a><i class="la la-eye"></i>Views 50</a>
                                 </div>
-                            </div><!--post-bar end-->
+                            </div>
+                            <!--post-bar end-->
                             <div class="posty">
                                 <div class="post-bar no-margin">
                                     <div class="post_topbar">
@@ -226,12 +233,13 @@ $content = '<main>
                                                 <a href="#"><i class="la la-heart"></i> Like</a>
                                                 <img src="images\liked-img.png" alt="">
                                                 <span>25</span>
-                                            </li> 
+                                            </li>
                                             <li><a href="#" title="" class="com"><img src="images\com.png" alt=""> Comment 15</a></li>
                                         </ul>
                                         <a><i class="la la-eye"></i>Views 50</a>
                                     </div>
-                                </div><!--post-bar end-->
+                                </div>
+                                <!--post-bar end-->
                                 <div class="comment-section">
                                     <div class="plus-ic">
                                         <i class="la la-plus"></i>
@@ -249,7 +257,8 @@ $content = '<main>
                                                         <p>Lorem ipsum dolor sit amet, </p>
                                                         <a href="#" title="" class="active"><i class="fa fa-reply-all"></i>Reply</a>
                                                     </div>
-                                                </div><!--comment-list end-->
+                                                </div>
+                                                <!--comment-list end-->
                                                 <ul>
                                                     <li>
                                                         <div class="comment-list">
@@ -262,7 +271,8 @@ $content = '<main>
                                                                 <p>Hi John </p>
                                                                 <a href="#" title=""><i class="fa fa-reply-all"></i>Reply</a>
                                                             </div>
-                                                        </div><!--comment-list end-->
+                                                        </div>
+                                                        <!--comment-list end-->
                                                     </li>
                                                 </ul>
                                             </li>
@@ -277,10 +287,12 @@ $content = '<main>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at.</p>
                                                         <a href="#" title=""><i class="fa fa-reply-all"></i>Reply</a>
                                                     </div>
-                                                </div><!--comment-list end-->
+                                                </div>
+                                                <!--comment-list end-->
                                             </li>
                                         </ul>
-                                    </div><!--comment-sec end-->
+                                    </div>
+                                    <!--comment-sec end-->
                                     <div class="post-comment">
                                         <div class="cm_img">
                                             <img src="images\resources\bg-img4.png" alt="">
@@ -291,14 +303,20 @@ $content = '<main>
                                                 <button type="submit">Send</button>
                                             </form>
                                         </div>
-                                    </div><!--post-comment end-->
-                                </div><!--comment-section end-->
-                            </div><!--posty end-->
+                                    </div>
+                                    <!--post-comment end-->
+                                </div>
+                                <!--comment-section end-->
+                            </div>
+                            <!--posty end-->
                             <div class="process-comm">
                                 <a href="#" title=""><img src="images\process-icon.png" alt=""></a>
-                            </div><!--process-comm end-->
-                        </div><!--posts-section end-->
-                    </div><!--main-ws-sec end-->
+                            </div>
+                            <!--process-comm end-->
+                        </div>
+                        <!--posts-section end-->
+                    </div>
+                    <!--main-ws-sec end-->
                 </div>
                 <div class="col-lg-3 pd-right-none no-pd">
                     <div class="right-sidebar">
@@ -313,38 +331,46 @@ $content = '<main>
                                         <h3>Senior Product Designer</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
                                     </div>
-                                </div><!--job-info end-->
+                                </div>
+                                <!--job-info end-->
                                 <div class="job-info">
                                     <div class="job-details">
                                         <h3>Senior UI / UX Designer</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
                                     </div>
-                                </div><!--job-info end-->
+                                </div>
+                                <!--job-info end-->
                                 <div class="job-info">
                                     <div class="job-details">
                                         <h3>Junior Seo Designer</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
                                     </div>
-                                </div><!--job-info end-->
+                                </div>
+                                <!--job-info end-->
                                 <div class="job-info">
                                     <div class="job-details">
                                         <h3>Senior PHP Designer</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
                                     </div>
-                                </div><!--job-info end-->
+                                </div>
+                                <!--job-info end-->
                                 <div class="job-info">
                                     <div class="job-details">
                                         <h3>Senior Developer Designer</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
                                     </div>
-                                </div><!--job-info end-->
-                            </div><!--jobs-list end-->
-                        </div><!--widget-jobs end-->
+                                </div>
+                                <!--job-info end-->
+                            </div>
+                            <!--jobs-list end-->
+                        </div>
+                        <!--widget-jobs end-->
                         <div class="widget suggestions full-width">
                             <div class="sd-title">
                                 <h3>Most Viewed People</h3>
                                 <i class="la la-ellipsis-v"></i>
-                            </div><!--sd-title end-->
+                            </div>
+                            <!--sd-title end-->
                             <div class="suggestions-list">
                                 <div class="suggestion-usd">
                                     <img src="images\resources\s1.png" alt="">
@@ -397,13 +423,15 @@ $content = '<main>
                                 <div class="view-more">
                                     <a href="#" title="">View More</a>
                                 </div>
-                            </div><!--suggestions-list end-->
+                            </div>
+                            <!--suggestions-list end-->
                         </div>
-                    </div><!--right-sidebar end-->
+                    </div>
+                    <!--right-sidebar end-->
                 </div>
             </div>
         </div><!-- main-section-data end-->
-    </div> 
+    </div>
 </div>
 </main>
 

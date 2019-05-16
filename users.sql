@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 15/05/2019 18:21:39
+ Date: 16/05/2019 02:37:40
 */
 
 SET NAMES utf8mb4;
@@ -25,6 +25,47 @@ CREATE TABLE `friends`  (
   `OwnerId` int(255) NOT NULL,
   `FriendId` int(255) NOT NULL
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of friends
+-- ----------------------------
+INSERT INTO `friends` VALUES (2, 3);
+INSERT INTO `friends` VALUES (3, 2);
+INSERT INTO `friends` VALUES (3, 4);
+INSERT INTO `friends` VALUES (4, 3);
+INSERT INTO `friends` VALUES (6, 3);
+INSERT INTO `friends` VALUES (3, 6);
+
+-- ----------------------------
+-- Table structure for posts
+-- ----------------------------
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `posts`  (
+  `UserId` int(11) NOT NULL,
+  `Caption` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `PostTime` datetime(6) NOT NULL,
+  `IsPublic` tinyint(2) NOT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of posts
+-- ----------------------------
+INSERT INTO `posts` VALUES (6, 'Test Post', '2019-05-16 02:26:36.000000', 1);
+
+-- ----------------------------
+-- Table structure for requests
+-- ----------------------------
+DROP TABLE IF EXISTS `requests`;
+CREATE TABLE `requests`  (
+  `OwnerID` int(255) NOT NULL,
+  `RequesteeID` int(255) NOT NULL,
+  PRIMARY KEY (`OwnerID`, `RequesteeID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of requests
+-- ----------------------------
+INSERT INTO `requests` VALUES (5, 2);
 
 -- ----------------------------
 -- Table structure for users
@@ -44,11 +85,15 @@ CREATE TABLE `users`  (
   `AboutMe` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `HasPic` tinyint(2) NOT NULL DEFAULT 0,
   PRIMARY KEY (`UserId`, `Email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (2, 'm.ibrahim99x@gmail.com', '$2y$10$JTQoSAmLTTzLSkkhaxztsue74NPg8DNqT4rH7Al5L9uelVleqGX3G', 'Muhammad', 'Ibrahim', '', 'M', '0000-00-00 00:00:00', 'Alex', '', '', 0);
+INSERT INTO `users` VALUES (2, 'm.ibrahim99x@gmail.com', '$2y$10$JTQoSAmLTTzLSkkhaxztsue74NPg8DNqT4rH7Al5L9uelVleqGX3G', 'Muhammad', 'Ibrahim', '', 'M', '0000-00-00 00:00:00', 'Alex', '', 'I am a software developer', 1);
+INSERT INTO `users` VALUES (3, 'omarreda@gmail.com', '$2y$10$ucx7Vzua6qiL8Oi65wNMO.UZhpSq2zrZE6sfkbPvODjZalFtPy1oq', 'Omar', 'Reda', '', 'M', '0000-00-00 00:00:00', 'Egypt', '', 'Graphic Designer', 0);
+INSERT INTO `users` VALUES (4, 'bakr@gmail.com', '$2y$10$YoQ.oIkyKInflKwKPZaGAOe7gYa6F7DSUK6eNUlhk6hOHciXfInRy', 'Bakr', 'Mohamed', '', 'M', '0000-00-00 00:00:00', 'Egypt', '', 'حلها انت يا رايق', 1);
+INSERT INTO `users` VALUES (5, 'samy@gmail.com', '$2y$10$3njJR3o4yVHMwF.X6Csi8eb4p0SHibvqLLZEUS9d5G9mA2jsV5sTO', 'Ahmed', 'Samy', '', 'M', '0000-00-00 00:00:00', 'Egypt', '', 'هات بوسه', 1);
+INSERT INTO `users` VALUES (6, 'islam@gmail.com', '$2y$10$s6eppepQMSBj6XZsNiza9OAtqXLNt/i0ei.VvNOQQababuYAifkwm', 'Islam', 'Mostafa', '', 'M', '0000-00-00 00:00:00', 'Egypt', '', 'Nothing yet.', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

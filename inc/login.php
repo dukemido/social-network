@@ -29,6 +29,7 @@ if ($stmt = $link->prepare('SELECT * FROM users WHERE Email = ?')) {
             $_SESSION['Name'] = $row['FirstName'] . ' ' . $row['LastName'];
             $_SESSION['Pic'] = $row['HasPic'];
             $_SESSION['Gender'] = $row['Gender'];
+            $_SESSION['AboutMe'] = $row['AboutMe'];
             if ($row['HasPic'] == '1') {
                 $_SESSION['Pic'] = 'users/' . $_SESSION['User'] . '.jpg';
             } else if ($_SESSION['Gender'] == 'M') {

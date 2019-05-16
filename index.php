@@ -12,12 +12,12 @@ $content = '<main>
                             <div class="user-profile">
                                 <div class="username-dt">
                                     <div class="usr-pic">
-                                        <img src="'.$_SESSION['Pic'].'" height="100px" width="100px" alt="">
+                                        <img src="' . $_SESSION['Pic'] . '" height="100px" width="100px" alt="">
                                     </div>
                                 </div><!--username-dt end-->
                                 <div class="user-specs">
-                                    <h3>'.$_SESSION['Name'].'</h3>
-                                    <span>About me will be here.</span>
+                                    <h3>' . $_SESSION['Name'] . '</h3>
+                                    <span>' . $_SESSION['AboutMe'] . '.</span>
                                 </div>
                             </div><!--user-profile end-->
                             <ul class="user-fw-status">
@@ -26,65 +26,7 @@ $content = '<main>
                                 </li>
                             </ul>
                         </div><!--user-data end-->
-                        <div class="suggestions full-width">
-                            <div class="sd-title">
-                                <h3>Suggestions</h3>
-                                <i class="la la-ellipsis-v"></i>
-                            </div><!--sd-title end-->
-                            <div class="suggestions-list">
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s1.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Jessica William</h4>
-                                        <span>Graphic Designer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s2.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>John Doe</h4>
-                                        <span>PHP Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s3.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Poonam</h4>
-                                        <span>Wordpress Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s4.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Bill Gates</h4>
-                                        <span>C & C++ Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s5.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>Jessica William</h4>
-                                        <span>Graphic Designer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="suggestion-usd">
-                                    <img src="images\resources\s6.png" alt="">
-                                    <div class="sgt-text">
-                                        <h4>John Doe</h4>
-                                        <span>PHP Developer</span>
-                                    </div>
-                                    <span><i class="la la-plus"></i></span>
-                                </div>
-                                <div class="view-more">
-                                    <a href="#" title="">View More</a>
-                                </div>
-                            </div><!--suggestions-list end-->
-                        </div><!--suggestions end-->
+                        
                         
                     </div><!--main-left-sidebar end-->
                 </div>
@@ -92,11 +34,10 @@ $content = '<main>
                     <div class="main-ws-sec">
                         <div class="post-topbar">
                             <div class="user-picy">
-                                <img src="images\resources\user-pic.png" alt="">
+                                <img height="50px" width="50px" src="' . $_SESSION['Pic'] . '" alt="">
                             </div>
                             <div class="post-st">
                                 <ul>
-                                    <li><a class="post_project" href="#" title="">Post a Project</a></li>
                                     <li><a class="post-jb active" href="#" title="">Post a Job</a></li>
                                 </ul>
                             </div><!--post-st end-->

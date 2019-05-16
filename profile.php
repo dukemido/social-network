@@ -8,10 +8,15 @@ if (empty($_GET['id'])) {
     return;
 }
 $myprofile = false;
+$is_friends = false;
+$is_requested = false;
+$can_accept = false;
+
 $id = $_GET['id'];
 if ($id == $_SESSION['User']) {
     $pic = $_SESSION['Pic'];
     $name = $_SESSION['Name'];
+    $about = $_SESSION['AboutMe'];
     $myprofile = true;
 } else {
     // Load data of Profile with Id = $id
@@ -28,6 +33,7 @@ if ($id == $_SESSION['User']) {
             } else if ($row['Gender'] == 'F') {
                 $pic['Pic'] = 'users/default_f.jpg';
             }
+            $about = $row['AboutMe'];
         } else {
             $content = '<main>
            <div class="main-section">
@@ -40,6 +46,40 @@ if ($id == $_SESSION['User']) {
             include_once('inc/layout.php');
             return;
         }
+    }
+
+    // Check if they are both friends.
+    if ($stmt = $link->prepare('SELECT * FROM friends WHERE OwnerId = ? AND FriendId = ?')) {
+        $stmt->bind_param('ss', $_SESSION['User'], $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            $is_friends = true;
+        }
+    }
+
+    // Check if a friend request was sent.
+    if (!$is_friends) {
+        if ($stmt = $link->prepare('SELECT * FROM requests WHERE OwnerId = ? AND RequesteeId = ?')) {
+            $stmt->bind_param('ss', $_SESSION['User'], $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($row = $result->fetch_assoc()) {
+                $is_requested = true;
+            }
+        }
+    }
+}
+$result = $link->query("SELECT COUNT(*) FROM friends WHERE OwnerId = '" . $id . "'");
+$row = $result->fetch_row();
+$friends_count = $row[0];
+
+if ($stmt = $link->prepare('SELECT * FROM requests WHERE RequesteeId = ? AND OwnerId = ?')) {
+    $stmt->bind_param('ss', $_SESSION['User'], $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($row = $result->fetch_assoc()) {
+        $can_accept = true;
     }
 }
 
@@ -61,12 +101,91 @@ $content = '
 
                 $.ajax({
                     type: "POST",
-                    url: \'inc/request.php\',
+                    url: \'inc/sendrequest.php\',
                     data: dataf,
                     success: function(data) {
-                        if (data == \'success\')
+                        if (data == \'success\'){
                             swal("Friend Request Sent");
-                        else swal("You have a few errors!", data, "error");
+                            document.getElementById(\'request\').style = "display:none";
+                            document.getElementById(\'deleterequest\').style = "display:block";
+                        }
+                        else swal("Error!", data, "error");
+                        //alert(data);
+
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(\'#deleterequest\').on(\'submit\', function(e) {
+                //Stop the form from submitting itself to the server.
+                e.preventDefault();
+                var dataf = $("#deleterequest").serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: \'inc/deleterequest.php\',
+                    data: dataf,
+                    success: function(data) {
+                        if (data == \'success\'){
+                            swal("Friend Request Cancelled");
+                            document.getElementById(\'request\').style = "display:block";
+                            document.getElementById(\'deleterequest\').style = "display:none";
+                        }
+                        else swal("Error!", data, "error");
+                        //alert(data);
+
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(\'#acceptrequest\').on(\'submit\', function(e) {
+                //Stop the form from submitting itself to the server.
+                e.preventDefault();
+                var dataf = $("#acceptrequest").serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: \'inc/acceptrequest.php\',
+                    data: dataf,
+                    success: function(data) {
+                        if (data == \'12success\'){
+                            swal("Friend Request Accepted");
+                            document.getElementById(\'acceptrequest\').style = "display:none";
+                            document.getElementById(\'deletefriend\').style = "display:block";
+
+                        }
+                        else swal("Error!", data, "error");
+                        //alert(data);
+
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(\'#deletefriend\').on(\'submit\', function(e) {
+                //Stop the form from submitting itself to the server.
+                e.preventDefault();
+                var dataf = $("#deletefriend").serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: \'inc/deletefriend.php\',
+                    data: dataf,
+                    success: function(data) {
+                        if (data == \'1success\'){
+                            swal("Friend Deleted");
+                            document.getElementById(\'deletefriend\').style = "display:none";
+                            document.getElementById(\'request\').style = "display:block";
+                        }
+                        else swal("Error!", data, "error");
                         //alert(data);
 
                     }
@@ -90,18 +209,52 @@ $content = '
                                 <ul class="flw-hr">
                                     ';
 if (!$myprofile) {
-    $content = $content . '<form id="request"> 
+    if ($is_friends === false) {
+        if ($can_accept === true) {
+            $request = $delete = $delete_friend = "none";
+            $accept = "block";
+        } else if ($is_requested === false) {
+            $request = "block";
+            $delete = $accept =  $delete_friend = "none";
+        } else {
+            $request = $accept =  $delete_friend =  "none";
+            $delete = "block";
+        }
+        // not friends and friend request not was sent.
+
+    } else {
+        $request = $delete = $accept = "none";
+        $delete_friend = "block";
+    }
+    $content = $content . '<form id="request" style="display:' . $request . '"> 
         <input type="hidden" name="requester" value="' . $_SESSION['User'] . '">
         <input type="hidden" name="requestee" value="' . $id . '">
         <li><a href="#" title="" class="hre"><input type="submit" value="Add Friend" style=" border:none; background:none; color:#ffffff;"></a></li>
         </form>';
+
+    $content = $content . '<form id="deleterequest" style="display:' . $delete . '"> 
+            <input type="hidden" name="requester" value="' . $_SESSION['User'] . '">
+            <input type="hidden" name="requestee" value="' . $id . '">
+            <li><a href="#" title="" class="hre"><input type="submit" value="Cancel Friend Request" style=" border:none; background:none; color:#ffffff;"></a></li>
+            </form>';
+    $content = $content . '<form id="acceptrequest" style="display:' . $accept . '"> 
+            <input type="hidden" name="requester" value="' . $_SESSION['User'] . '">
+            <input type="hidden" name="requestee" value="' . $id . '">
+            <li><a href="#" title="" class="hre"><input type="submit" value="Accept Friend Request" style=" border:none; background:none; color:#ffffff;"></a></li>
+            </form>';
+    $content = $content . '<form id="deletefriend" style="display:' . $delete_friend . '"> 
+    <input type="hidden" name="requester" value="' . $_SESSION['User'] . '">
+    <input type="hidden" name="requestee" value="' . $id . '">
+    <li><a href="#" title="" class="hre"><input type="submit" value="Delete Friend" style=" border:none; background:none; color:#ffffff;"></a></li>
+    </form>';
 }
+
 
 $content = $content . '</ul>
                                 <ul class="flw-status">
                                     <li>
                                         <span>Friends</span>
-                                        <b>34</b>
+                                        <b>' . $friends_count . '</b>
                                     </li>
                                    
                                 </ul>
@@ -120,7 +273,7 @@ $content = $content . '</ul>
                         <div class="user-tab-sec">
                             <h3>' . $name . '</h3>
                             <div class="star-descp">
-                                <span>About me Here</span>
+                                <span>'.$about.'</span>
                                </div><!--star-descp end-->
                             <div class="tab-feed">
                                 <ul>

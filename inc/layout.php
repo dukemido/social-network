@@ -257,45 +257,49 @@ if ($_SESSION["User"] === null) {
             <!--post-project end-->
         </div>
         <!--post-project-popup end-->
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#newpost').on('submit', function(e) {
+                    //Stop the form from submitting itself to the server.
+                    e.preventDefault();
+                    var dataf = $("#newpost").serialize();
 
+                    $.ajax({
+                        type: "POST",
+                        url: 'inc/newpost.php',
+                        data: dataf,
+                        success: function(data) {
+                            if (data == 'Posted')
+                                swal("Done", "You have posted!", "success");
+                            window.setTimeout(function() {
+                                window.location.href = 'index.php';
+                            }, 2000);
+                            //alert(data);
+
+                        }
+                    });
+                });
+            });
+        </script>
         <div class="post-popup job_post">
             <div class="post-project">
-                <h3>Post a job</h3>
+                <h3>New Post</h3>
                 <div class="post-project-fields">
-                    <form>
+                    <form id="newpost">
                         <div class="row">
                             <div class="col-lg-12">
-                                <input type="text" name="title" placeholder="Title">
-                            </div>
-                            <div class="col-lg-12">
                                 <div class="inp-field">
-                                    <select>
-                                        <option>Category</option>
-                                        <option>Category 1</option>
-                                        <option>Category 2</option>
-                                        <option>Category 3</option>
+                                    <select name="post_type">
+                                        <option value="1">Public</option>
+                                        <option value="0">Private</option>
                                     </select>
                                 </div>
                             </div>
+
                             <div class="col-lg-12">
-                                <input type="text" name="skills" placeholder="Skills">
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="price-br">
-                                    <input type="text" name="price1" placeholder="Price">
-                                    <i class="la la-dollar"></i>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="inp-field">
-                                    <select>
-                                        <option>Full Time</option>
-                                        <option>Half time</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <textarea name="description" placeholder="Description"></textarea>
+                                <textarea name="caption" placeholder="Caption"></textarea>
                             </div>
                             <div class="col-lg-12">
                                 <ul>

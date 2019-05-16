@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 16/05/2019 02:37:40
+ Date: 16/05/2019 04:47:41
 */
 
 SET NAMES utf8mb4;
@@ -33,8 +33,31 @@ INSERT INTO `friends` VALUES (2, 3);
 INSERT INTO `friends` VALUES (3, 2);
 INSERT INTO `friends` VALUES (3, 4);
 INSERT INTO `friends` VALUES (4, 3);
+INSERT INTO `friends` VALUES (3, 5);
+INSERT INTO `friends` VALUES (5, 3);
 INSERT INTO `friends` VALUES (6, 3);
 INSERT INTO `friends` VALUES (3, 6);
+
+-- ----------------------------
+-- Table structure for notifications
+-- ----------------------------
+DROP TABLE IF EXISTS `notifications`;
+CREATE TABLE `notifications`  (
+  `OwnerId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Link` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Message` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Date` datetime(0) NULL DEFAULT NULL,
+  `Pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of notifications
+-- ----------------------------
+INSERT INTO `notifications` VALUES ('6', 'profile.php?id=3', 'has sent you a friend request', '2019-05-16 04:36:50', 'users/default_m.jpg', 'Omar Reda');
+INSERT INTO `notifications` VALUES ('3', 'profile.php?id=6', 'has accepted your friend request', '2019-05-16 04:36:56', 'users/default_m.jpg', 'Islam Mostafa');
+INSERT INTO `notifications` VALUES ('6', 'profile.php?id=3', 'has sent you a friend request', '2019-05-16 04:39:52', 'users/default_m.jpg', 'Omar Reda');
+INSERT INTO `notifications` VALUES ('3', 'profile.php?id=6', 'has accepted your friend request', '2019-05-16 04:40:02', 'users/default_m.jpg', 'Islam Mostafa');
 
 -- ----------------------------
 -- Table structure for posts
@@ -50,7 +73,7 @@ CREATE TABLE `posts`  (
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES (6, 'Test Post', '2019-05-16 02:26:36.000000', 1);
+INSERT INTO `posts` VALUES (6, 'Test Post', '2019-05-16 02:26:36.000000', 0);
 
 -- ----------------------------
 -- Table structure for requests

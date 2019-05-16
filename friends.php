@@ -39,6 +39,5 @@ $content = $content . '</div>
 
     </div>
 </section>
-<!--companies-info end-->
 ';
 include_once('inc/layout.php');

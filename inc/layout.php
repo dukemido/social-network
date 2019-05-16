@@ -119,10 +119,8 @@ require_once('inc/config.php');
                         </div>
                         <div class="user-account-settingss">
                             <ul class="us-links">
-                                <li><a href="profile-account-setting.html" title="">Account Setting</a></li>
-                                <li><a href="#" title="">Privacy</a></li>
-                                <li><a href="#" title="">Faqs</a></li>
-                                <li><a href="#" title="">Terms &amp; Conditions</a></li>
+                                <li><a href="friends.php" title="">Friends</a></li>
+                                <li><a href="profile.php" title="">Profile</a></li>
                             </ul>
                             <h3 class="tc"><a href="inc/logout.php" title="">Logout</a></h3>
                         </div>

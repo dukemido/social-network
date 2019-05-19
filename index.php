@@ -1,6 +1,7 @@
 <?php
 session_start();
 $title = 'Home';
+include_once('inc/config.php');
 $content = ' <main>
 <div class="main-section">
     <div class="container">
@@ -37,9 +38,13 @@ $content = ' <main>
                 <div class="col-lg-6 col-md-8 no-pd">
                     <div class="main-ws-sec">
                         <div class="post-topbar">
-                            <div class="user-picy">
+                            <div class="user-picy" style="margin-right:10px;">
                                 <img height="50px" width="50px" src="' . $_SESSION['Pic'] . '" alt="">
                             </div>
+                            <div >
+                                    <p class="" type="text" style="margin-top:10px; color:#D5D5D5">   Click on post to add a new post..</p>
+                            </div>
+                            <!--post-st end-->
                             <div class="post-st">
                                 <ul>
                                     <li><a class="post-jb active" href="#" title="">Post</a></li>
@@ -48,82 +53,17 @@ $content = ' <main>
                             <!--post-st end-->
                         </div>
                         <!--post-topbar end-->
+
                         <div class="posts-section">
                             
-                            <div class="top-profiles">
+                           <div class="top-profiles">
                                 <div class="pf-hd">
-                                    <h3>Friend Suggestions</h3>
+                                    <h3>People</h3>
                                     <i class="la la-ellipsis-v"></i>
                                 </div>
-                                <div class="profiles-slider">
-                                    <div class="user-profy">
-                                        <img src="images\resources\user1.png" alt="">
-                                        <h3>John Doe</h3>
-                                        <span>Graphic Designer</span>
-                                        <ul>
-                                            <li><a href="#" title="" class="followw">Add Friend</a></li>
-                                        </ul>
-                                        <a href="#" title="">View Profile</a>
-                                    </div>
-                                    <!--user-profy end-->
-                                    <div class="user-profy">
-                                        <img src="images\resources\user2.png" alt="">
-                                        <h3>John Doe</h3>
-                                        <span>Graphic Designer</span>
-                                        <ul>
-                                            <li><a href="#" title="" class="followw">Add Friend</a></li>
-                                        </ul>
-                                        <a href="#" title="">View Profile</a>
-                                    </div>
-                                    <!--user-profy end-->
-                                    <div class="user-profy">
-                                        <img src="images\resources\user3.png" alt="">
-                                        <h3>John Doe</h3>
-                                        <span>Graphic Designer</span>
-                                        <ul>
-                                            <li><a href="#" title="" class="followw">Add Friend</a></li>
-                                        </ul>
-                                        <a href="#" title="">View Profile</a>
-                                    </div>
-                                    <!--user-profy end-->
-                                    <div class="user-profy">
-                                        <img src="images\resources\user1.png" alt="">
-                                        <h3>John Doe</h3>
-                                        <span>Graphic Designer</span>
-                                        <ul>
-                                            <li><a href="#" title="" class="followw">Add Friend</a></li>
-                                        </ul>
-                                        <a href="#" title="">View Profile</a>
-                                    </div>
-                                    <!--user-profy end-->
-                                    <div class="user-profy">
-                                        <img src="images\resources\user2.png" alt="">
-                                        <h3>John Doe</h3>
-                                        <span>Graphic Designer</span>
-                                        <ul>
-                                            <li><a href="#" title="" class="followw">Add Friend</a></li>
-                                        </ul>
-                                        <a href="#" title="">View Profile</a>
-                                    </div>
-                                    <!--user-profy end-->
-                                    <div class="user-profy">
-                                        <img src="images\resources\user3.png" alt="">
-                                        <h3>John Doe</h3>
-                                        <span>Graphic Designer</span>
-                                        <ul>
-                                            <li><a href="#" title="" class="followw">Add Friend</a></li>
-                                        </ul>
-                                        <a href="#" title="">View Profile</a>
-                                    </div>
-                                    <!--user-profy end-->
-                                </div>
-                                <!--profiles-slider end-->
-                            </div>
-                            <!--top-profiles end-->';
-$id = $_SESSION['User'];
-$count = 0;
-include('inc/config.php');
-if ($stmt = $link->prepare("SELECT * from posts p, users u WHERE p.UserId= '" . $id . "' AND p.UserId = u.UserId ORDER BY PostTime")) {
+                                <div class="profiles-slider">';
+                                       
+if ($stmt = $link->prepare("SELECT * from friends f, Users U WHERE  U.UserId!=f.FriendId AND U.UserId <> ".$_SESSION['User']." GROUP BY  U.UserId HAVING COUNT(U.UserId) > 1;")) {
     $stmt->execute();
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) {
@@ -134,8 +74,59 @@ if ($stmt = $link->prepare("SELECT * from posts p, users u WHERE p.UserId= '" . 
         } else if ($row['Gender'] == 'F') {
             $pic['Pic'] = 'users/default_f.jpg';
         }
+        $content = $content . ' <!--user-profy end-->
+                                    <div class="user-profy">
+                                        <img src="'. $pic.'" height="57px" width="57px" alt="">
+                                        <h3>' . $row['FirstName'] . ' ' . $row['LastName'] . '</h3>
+                                        <span>' . $row['AboutMe'] . '</span>
+                                        <a href="profile.php?id=' . $row['UserId'] .  '" title="">View Profile</a>
+                                    </div>
+                                    <!--user-profy end-->';
+        
+    }
+}
 
-        if ($is_public)
+
+
+
+
+
+
+
+                                   
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           $content = $content.'</div>
+                                <!--profiles-slider end-->
+                            </div>
+                            <!--top-profiles end--> ';
+$id = $_SESSION['User'];
+$count = 0;
+include('inc/config.php');
+if ($stmt = $link->prepare("SELECT * from posts p, users u WHERE p.UserId= '" . $id . "' AND p.UserId = u.UserId ORDER BY PostTime DESC")) {
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+        if ($row['HasPic'] == '1') {
+            $pic = 'users/' . $row['UserId'] . '.jpg';
+        } else if ($row['Gender'] == 'M') {
+            $pic = 'users/default_m.jpg';
+        } else if ($row['Gender'] == 'F') {
+            $pic['Pic'] = 'users/default_f.jpg';
+        }
+        $is_public = $row['IsPublic'];
+        if ($is_public == 1)
             $perm = 'Public';
         else $perm = 'Private';
         $count++;
@@ -181,7 +172,8 @@ if ($stmt = $link->prepare("SELECT * from posts p, users u, friends f WHERE f.Ow
         } else if ($row['Gender'] == 'F') {
             $pic['Pic'] = 'users/default_f.jpg';
         }
-
+        $is_public = $row['IsPublic'];
+        if ($is_public == 1)
         if ($is_public)
             $perm = 'Public';
         else $perm = 'Private';

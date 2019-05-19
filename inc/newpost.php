@@ -3,7 +3,7 @@ session_start();
 include_once('config.php');
 
 $poster = $_SESSION['User'];
-$is_public = $_POST['post_type'] == 1;
+$is_public = $_POST['post_type'];
 $caption = $_POST['caption'];
 
 if ($stmt = $link->prepare('INSERT INTO posts VALUES (?,?,NOW(),?)')) {
